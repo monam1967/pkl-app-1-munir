@@ -36,6 +36,9 @@ namespace pkl_app_1_munir
             this.namaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.umurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.potongNamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tugasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculatorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +50,8 @@ namespace pkl_app_1_munir
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.latihanToolStripMenuItem});
+            this.latihanToolStripMenuItem,
+            this.tugasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -59,7 +63,8 @@ namespace pkl_app_1_munir
             this.latihanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.namaToolStripMenuItem,
             this.calculatorToolStripMenuItem,
-            this.umurToolStripMenuItem});
+            this.umurToolStripMenuItem,
+            this.potongNamaToolStripMenuItem});
             this.latihanToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latihanToolStripMenuItem.Name = "latihanToolStripMenuItem";
             this.latihanToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
@@ -86,6 +91,28 @@ namespace pkl_app_1_munir
             this.umurToolStripMenuItem.Text = "Umur";
             this.umurToolStripMenuItem.Click += new System.EventHandler(this.umurToolStripMenuItem_Click);
             // 
+            // potongNamaToolStripMenuItem
+            // 
+            this.potongNamaToolStripMenuItem.Name = "potongNamaToolStripMenuItem";
+            this.potongNamaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.potongNamaToolStripMenuItem.Text = "Potong Nama";
+            this.potongNamaToolStripMenuItem.Click += new System.EventHandler(this.potongNamaToolStripMenuItem_Click);
+            // 
+            // tugasToolStripMenuItem
+            // 
+            this.tugasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculatorToolStripMenuItem1});
+            this.tugasToolStripMenuItem.Name = "tugasToolStripMenuItem";
+            this.tugasToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
+            this.tugasToolStripMenuItem.Text = "Tugas";
+            // 
+            // calculatorToolStripMenuItem1
+            // 
+            this.calculatorToolStripMenuItem1.Name = "calculatorToolStripMenuItem1";
+            this.calculatorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.calculatorToolStripMenuItem1.Text = "Calculator";
+            this.calculatorToolStripMenuItem1.Click += new System.EventHandler(this.calculatorToolStripMenuItem1_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,5 +138,8 @@ namespace pkl_app_1_munir
         private System.Windows.Forms.ToolStripMenuItem namaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calculatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem umurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem potongNamaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tugasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculatorToolStripMenuItem1;
     }
 }

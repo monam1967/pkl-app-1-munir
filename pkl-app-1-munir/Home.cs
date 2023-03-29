@@ -35,5 +35,17 @@ namespace pkl_app_1_munir
             var umur = new Hitung_Umur();
             umur.Show();
         }
+
+        private void potongNamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var potong = new Potong_String();
+            potong.Show();
+        }
+
+        private void calculatorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var calculator = new Calculator();
+            calculator.Show();
+        }
     }
 }
