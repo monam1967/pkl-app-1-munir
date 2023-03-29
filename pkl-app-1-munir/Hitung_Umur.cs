@@ -15,6 +15,7 @@ namespace pkl_app_1_munir
         public Hitung_Umur()
         {
             InitializeComponent();
+            AcceptButton = this.button1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +26,14 @@ namespace pkl_app_1_munir
             var umur = tglSkrg.Date - tglLahir.Date;
             var umurHari = umur.TotalDays;
             output.Text = $"Umur Agus adalah {umurHari:n0} hari";
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }
