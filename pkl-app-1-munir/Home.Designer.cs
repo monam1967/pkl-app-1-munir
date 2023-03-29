@@ -35,6 +35,7 @@ namespace pkl_app_1_munir
             this.latihanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.namaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.umurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@ namespace pkl_app_1_munir
             this.latihanToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -57,9 +58,11 @@ namespace pkl_app_1_munir
             // 
             this.latihanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.namaToolStripMenuItem,
-            this.calculatorToolStripMenuItem});
+            this.calculatorToolStripMenuItem,
+            this.umurToolStripMenuItem});
+            this.latihanToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latihanToolStripMenuItem.Name = "latihanToolStripMenuItem";
-            this.latihanToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.latihanToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.latihanToolStripMenuItem.Text = "Latihan";
             // 
             // namaToolStripMenuItem
@@ -75,6 +78,13 @@ namespace pkl_app_1_munir
             this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
+            // 
+            // umurToolStripMenuItem
+            // 
+            this.umurToolStripMenuItem.Name = "umurToolStripMenuItem";
+            this.umurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.umurToolStripMenuItem.Text = "Umur";
+            this.umurToolStripMenuItem.Click += new System.EventHandler(this.umurToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -100,5 +110,6 @@ namespace pkl_app_1_munir
         private System.Windows.Forms.ToolStripMenuItem latihanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem namaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calculatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem umurToolStripMenuItem;
     }
 }

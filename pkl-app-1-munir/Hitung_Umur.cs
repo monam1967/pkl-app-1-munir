@@ -16,5 +16,15 @@ namespace pkl_app_1_munir
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var tglLahir = dateTimePicker1.Value;
+            var tglSkrg = DateTime.Now;
+
+            var umur = tglSkrg.Date - tglLahir.Date;
+            var umurHari = umur.TotalDays;
+            output.Text = $"Umur Agus adalah {umurHari:n0} hari";
+        }
     }
 }

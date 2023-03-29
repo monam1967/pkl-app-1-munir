@@ -31,6 +31,7 @@ namespace pkl_app_1_munir
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.output = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -50,17 +51,30 @@ namespace pkl_app_1_munir
             this.button1.TabIndex = 1;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // output
+            // 
+            this.output.AutoSize = true;
+            this.output.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.output.Location = new System.Drawing.Point(58, 160);
+            this.output.Name = "output";
+            this.output.Size = new System.Drawing.Size(0, 31);
+            this.output.TabIndex = 2;
+            this.output.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Hitung_Umur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 306);
+            this.Controls.Add(this.output);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Hitung_Umur";
             this.Text = "Hitung_Umur";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +82,6 @@ namespace pkl_app_1_munir
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label output;
     }
 }

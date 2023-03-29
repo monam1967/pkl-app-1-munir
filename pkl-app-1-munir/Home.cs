@@ -29,5 +29,11 @@ namespace pkl_app_1_munir
             var calc = new Calc();
             calc.Show();
         }
+
+        private void umurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var umur = new Hitung_Umur();
+            umur.Show();
+        }
     }
 }
