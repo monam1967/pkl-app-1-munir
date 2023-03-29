@@ -39,7 +39,7 @@ namespace pkl_app_1_munir
             // 
             // sub
             // 
-            this.sub.Location = new System.Drawing.Point(276, 248);
+            this.sub.Location = new System.Drawing.Point(278, 239);
             this.sub.Name = "sub";
             this.sub.Size = new System.Drawing.Size(78, 31);
             this.sub.TabIndex = 0;
@@ -49,6 +49,7 @@ namespace pkl_app_1_munir
             // 
             // uid
             // 
+            this.uid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uid.Location = new System.Drawing.Point(230, 107);
             this.uid.Multiline = true;
             this.uid.Name = "uid";
@@ -57,11 +58,15 @@ namespace pkl_app_1_munir
             // 
             // pass
             // 
+            this.pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass.Location = new System.Drawing.Point(230, 195);
             this.pass.Multiline = true;
             this.pass.Name = "pass";
             this.pass.PasswordChar = '*';
-            this.pass.Size = new System.Drawing.Size(173, 35);
+            this.pass.Size = new System.Drawing.Size(173, 25);
             this.pass.TabIndex = 2;
             // 
             // label1

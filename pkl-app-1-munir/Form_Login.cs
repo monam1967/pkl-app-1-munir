@@ -15,6 +15,7 @@ namespace pkl_app_1_munir
         public Form_Login()
         {
             InitializeComponent();
+            AcceptButton = this.sub;
         }
 
         private void sub_Click(object sender, EventArgs e)
@@ -33,7 +34,13 @@ namespace pkl_app_1_munir
             }
         }
 
-        // private void sub_KeyDown(object sender, KeyEventArgs e)
+        private void sub_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sub.PerformClick();
+            }
+        }
         
     }
 }

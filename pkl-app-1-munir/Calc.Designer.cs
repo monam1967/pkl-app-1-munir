@@ -41,18 +41,20 @@ namespace pkl_app_1_munir
             // 
             // input1
             // 
-            this.input1.Location = new System.Drawing.Point(213, 72);
+            this.input1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.input1.Location = new System.Drawing.Point(213, 83);
             this.input1.Multiline = true;
             this.input1.Name = "input1";
-            this.input1.Size = new System.Drawing.Size(183, 41);
+            this.input1.Size = new System.Drawing.Size(183, 35);
             this.input1.TabIndex = 0;
             // 
             // input2
             // 
-            this.input2.Location = new System.Drawing.Point(213, 129);
+            this.input2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.input2.Location = new System.Drawing.Point(213, 134);
             this.input2.Multiline = true;
             this.input2.Name = "input2";
-            this.input2.Size = new System.Drawing.Size(183, 41);
+            this.input2.Size = new System.Drawing.Size(183, 36);
             this.input2.TabIndex = 1;
             // 
             // tambah
@@ -104,11 +106,13 @@ namespace pkl_app_1_munir
             // 
             // output
             // 
-            this.output.Location = new System.Drawing.Point(213, 268);
+            this.output.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.output.Location = new System.Drawing.Point(234, 268);
             this.output.Multiline = true;
             this.output.Name = "output";
-            this.output.Size = new System.Drawing.Size(183, 40);
+            this.output.Size = new System.Drawing.Size(137, 33);
             this.output.TabIndex = 5;
+            this.output.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bagi
             // 
@@ -130,7 +134,7 @@ namespace pkl_app_1_munir
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 245);
+            this.label1.Location = new System.Drawing.Point(241, 245);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 7;

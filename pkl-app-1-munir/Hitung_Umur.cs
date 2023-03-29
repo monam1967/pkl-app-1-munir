@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace pkl_app_1_munir
 {
-    public partial class User : Form
+    public partial class Hitung_Umur : Form
     {
-        public User()
+        public Hitung_Umur()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            var nama = textBox1.Text;
-            output.Text = $"Welcome {nama}!";
         }
     }
 }
