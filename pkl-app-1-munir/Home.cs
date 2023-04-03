@@ -47,5 +47,11 @@ namespace pkl_app_1_munir
             var calculator = new Calculator();
             calculator.Show();
         }
+
+        private void sequentialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sq = new Squential();
+            sq.Show();
+        }
     }
 }
