@@ -29,7 +29,7 @@ namespace pkl_app_1_munir
         /// </summary>
         private void InitializeComponent()
         {
-            this.output = new System.Windows.Forms.TextBox();
+            this.panel = new System.Windows.Forms.TextBox();
             this.res = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.bagi = new System.Windows.Forms.Button();
@@ -49,20 +49,21 @@ namespace pkl_app_1_munir
             this.sen = new System.Windows.Forms.Button();
             this.nol = new System.Windows.Forms.Button();
             this.titik = new System.Windows.Forms.Button();
+            this.output = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // output
+            // panel
             // 
-            this.output.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.output.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.output.Location = new System.Drawing.Point(-1, 0);
-            this.output.Multiline = true;
-            this.output.Name = "output";
-            this.output.Size = new System.Drawing.Size(264, 89);
-            this.output.TabIndex = 0;
-            this.output.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel.Location = new System.Drawing.Point(-1, 0);
+            this.panel.Multiline = true;
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(264, 89);
+            this.panel.TabIndex = 0;
+            this.panel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // res
             // 
@@ -85,7 +86,7 @@ namespace pkl_app_1_munir
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(54, 52);
             this.del.TabIndex = 2;
-            this.del.Text = "<--";
+            this.del.Text = "C";
             this.del.UseVisualStyleBackColor = true;
             this.del.Click += new System.EventHandler(this.del_Click);
             // 
@@ -294,11 +295,21 @@ namespace pkl_app_1_munir
             this.titik.UseVisualStyleBackColor = true;
             this.titik.Click += new System.EventHandler(this.titik_Click);
             // 
+            // output
+            // 
+            this.output.Location = new System.Drawing.Point(1, 45);
+            this.output.Multiline = true;
+            this.output.Name = "output";
+            this.output.Size = new System.Drawing.Size(261, 43);
+            this.output.TabIndex = 20;
+            this.output.Text = "0";
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 414);
+            this.Controls.Add(this.output);
             this.Controls.Add(this.titik);
             this.Controls.Add(this.nol);
             this.Controls.Add(this.sen);
@@ -318,7 +329,7 @@ namespace pkl_app_1_munir
             this.Controls.Add(this.bagi);
             this.Controls.Add(this.del);
             this.Controls.Add(this.res);
-            this.Controls.Add(this.output);
+            this.Controls.Add(this.panel);
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.ResumeLayout(false);
@@ -328,7 +339,7 @@ namespace pkl_app_1_munir
 
         #endregion
 
-        private System.Windows.Forms.TextBox output;
+        private System.Windows.Forms.TextBox panel;
         private System.Windows.Forms.Button res;
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Button bagi;
@@ -348,5 +359,6 @@ namespace pkl_app_1_munir
         private System.Windows.Forms.Button sen;
         private System.Windows.Forms.Button nol;
         private System.Windows.Forms.Button titik;
+        private System.Windows.Forms.TextBox output;
     }
 }

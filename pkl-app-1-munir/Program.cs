@@ -16,6 +16,7 @@ namespace pkl_app_1_munir
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Calculator());
             Application.Run(new Form_Login());
             Application.Run(new Home());
         }
