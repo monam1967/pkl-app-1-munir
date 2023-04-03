@@ -25,11 +25,7 @@ namespace pkl_app_1_munir
             var H_Mangga = 1300;
             var Uang = 50000;
             var fee = 200;
-            var A = Apel * H_Apel;
-            var B = Mangga * H_Mangga;
-            var C = Uang - fee;
-            var D = A + B;
-            var Total = C - D;
+            var Total = (Uang - fee) - ((Apel * H_Apel) + (Mangga * H_Mangga));
 
             output.Text = $"Harga Apel = {H_Apel}" + Environment.NewLine +
                $"Harga Mangga = {H_Mangga}" + Environment.NewLine +
