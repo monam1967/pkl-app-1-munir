@@ -132,14 +132,14 @@ namespace pkl_app_1_munir
 
             DrawBoard();
 
-            if (ApakahNabrakBody())
+            if (Nabrak())
             {
                 GameOver();
             }
 
-            if (ApakahActorMakanFood())
+            if (Makan())
             {
-                RandomFood();
+                AcakBuah();
                 score++;
                 panjang++;
             }
@@ -149,7 +149,7 @@ namespace pkl_app_1_munir
             pictureBox1.Invalidate();
         }
 
-        private bool ApakahNabrakBody()
+        private bool Nabrak()
         {
             for (var i = 0; i <= panjang; i++)
             {
@@ -172,14 +172,14 @@ namespace pkl_app_1_munir
 
         }
 
-        private bool ApakahActorMakanFood()
+        private bool Makan()
         {
             if (actorX == foodX && actorY == foodY)
                 return true;
             return false;
         }
 
-        private void FormAnimasi_KeyDown(object sender, KeyEventArgs e)
+        private void Snacke_Game_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -198,11 +198,11 @@ namespace pkl_app_1_munir
             }
         }
 
-        private void FormAnimasi_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void Snacke_Game_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             e.IsInputKey = true;
         }
-        private void RandomFood()
+        private void AcakBuah()
         {
             Random randomX = new Random();
             foodX = randomX.Next(0, BOARD_SIZE);
@@ -216,7 +216,7 @@ namespace pkl_app_1_munir
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            RandomFood();
+            AcakBuah();
             DrawBoard();
             DrawActor();
             DrawFood();
