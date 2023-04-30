@@ -53,5 +53,23 @@ namespace pkl_app_1_munir
             var sq = new Squential();
             sq.Show();
         }
+
+        private void percabanganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cabang = new Percabangan();
+            cabang.Show();
+        }
+
+        private void functionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var function = new Function();
+            function.Show();
+        }
+
+        private void graphicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var graphic = new Graphic();
+            graphic.Show();
+        }
     }
 }

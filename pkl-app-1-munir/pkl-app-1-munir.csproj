@@ -64,6 +64,18 @@
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function.Designer.cs">
+      <DependentUpon>Function.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphic.Designer.cs">
+      <DependentUpon>Graphic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hitung_Umur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,12 @@
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Percabangan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Percabangan.Designer.cs">
+      <DependentUpon>Percabangan.cs</DependentUpon>
     </Compile>
     <Compile Include="Potong_String.cs">
       <SubType>Form</SubType>
@@ -111,11 +129,20 @@
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Function.resx">
+      <DependentUpon>Function.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphic.resx">
+      <DependentUpon>Graphic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hitung_Umur.resx">
       <DependentUpon>Hitung_Umur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Percabangan.resx">
+      <DependentUpon>Percabangan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Potong_String.resx">
       <DependentUpon>Potong_String.cs</DependentUpon>
