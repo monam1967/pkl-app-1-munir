@@ -66,6 +66,10 @@ namespace pkl_app_1_munir
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // timer2
             // 
             this.timer2.Interval = 10000;
