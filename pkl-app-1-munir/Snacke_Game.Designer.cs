@@ -72,6 +72,7 @@ namespace pkl_app_1_munir
             // 
             // timer2
             // 
+            this.timer2.Enabled = true;
             this.timer2.Interval = 10000;
             // 
             // Snacke_Game
