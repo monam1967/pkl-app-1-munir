@@ -81,7 +81,7 @@ namespace pkl_app_1_munir
             }
         }
 
-        private void DrawFood()
+        private void DrawBuah()
         {
             if (kanvas is null) return;
             using (var grafik = Graphics.FromImage(kanvas))
@@ -144,7 +144,7 @@ namespace pkl_app_1_munir
                 panjang++;
             }
             DrawActor();
-            DrawFood();
+            DrawBuah();
 
             pictureBox1.Invalidate();
         }
@@ -219,7 +219,7 @@ namespace pkl_app_1_munir
             AcakBuah();
             DrawBoard();
             DrawActor();
-            DrawFood();
+            DrawBuah();
             pictureBox1.Invalidate();
         }
     }
