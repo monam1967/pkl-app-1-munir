@@ -47,6 +47,7 @@ namespace pkl_app_1_munir
             this.pictureBox1.Size = new System.Drawing.Size(610, 434);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // label1
             // 
@@ -69,11 +70,13 @@ namespace pkl_app_1_munir
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
             // 
             this.timer2.Enabled = true;
             this.timer2.Interval = 10000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Snacke_Game
             // 
@@ -85,6 +88,8 @@ namespace pkl_app_1_munir
             this.Controls.Add(this.pictureBox1);
             this.Name = "Snacke_Game";
             this.Text = "Snacke_Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Snacke_Game_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Snacke_Game_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

@@ -46,6 +46,7 @@ namespace pkl_app_1_munir
             this.button1.TabIndex = 0;
             this.button1.Text = "Kotak Kosong";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -55,6 +56,7 @@ namespace pkl_app_1_munir
             this.button2.TabIndex = 1;
             this.button2.Text = "Kotak Isi";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -64,6 +66,7 @@ namespace pkl_app_1_munir
             this.button3.TabIndex = 2;
             this.button3.Text = "Bulat Kosong";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -73,6 +76,7 @@ namespace pkl_app_1_munir
             this.button4.TabIndex = 3;
             this.button4.Text = "Bulat Isi";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -82,6 +86,7 @@ namespace pkl_app_1_munir
             this.button5.TabIndex = 4;
             this.button5.Text = "Polygon Isi";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox1
             // 
@@ -90,6 +95,7 @@ namespace pkl_app_1_munir
             this.pictureBox1.Size = new System.Drawing.Size(514, 474);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // Graphic
             // 

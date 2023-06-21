@@ -49,6 +49,7 @@ namespace pkl_app_1_munir
             this.button1.TabIndex = 0;
             this.button1.Text = "Tanpa Procedure";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -58,6 +59,7 @@ namespace pkl_app_1_munir
             this.button2.TabIndex = 1;
             this.button2.Text = "Dengan Procedure";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -67,6 +69,7 @@ namespace pkl_app_1_munir
             this.button3.TabIndex = 2;
             this.button3.Text = "Dengan Function";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -76,6 +79,7 @@ namespace pkl_app_1_munir
             this.button4.TabIndex = 3;
             this.button4.Text = "Tanpa Function";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -85,6 +89,7 @@ namespace pkl_app_1_munir
             this.button5.TabIndex = 4;
             this.button5.Text = "Mulai";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // progressBar1
             // 
@@ -112,6 +117,10 @@ namespace pkl_app_1_munir
             this.label2.Size = new System.Drawing.Size(88, 37);
             this.label2.TabIndex = 7;
             this.label2.Text = "Hasil";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Function
             // 

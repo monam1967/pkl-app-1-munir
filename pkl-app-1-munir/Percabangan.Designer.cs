@@ -49,6 +49,7 @@ namespace pkl_app_1_munir
             this.button1.Size = new System.Drawing.Size(71, 64);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -58,6 +59,7 @@ namespace pkl_app_1_munir
             this.button2.Size = new System.Drawing.Size(71, 64);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -67,6 +69,7 @@ namespace pkl_app_1_munir
             this.button3.Size = new System.Drawing.Size(71, 64);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -76,6 +79,7 @@ namespace pkl_app_1_munir
             this.button4.Size = new System.Drawing.Size(71, 64);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -119,6 +123,7 @@ namespace pkl_app_1_munir
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Percabangan
             // 
@@ -135,6 +140,7 @@ namespace pkl_app_1_munir
             this.Controls.Add(this.button1);
             this.Name = "Percabangan";
             this.Text = "Percabangan";
+            this.Load += new System.EventHandler(this.FormPercabangan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
