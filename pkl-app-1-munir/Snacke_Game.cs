@@ -77,7 +77,7 @@ namespace pkl_app_1_munir
                 //var brushHead = new SolidBrush(Color.DarkRed);
                 //grafik.FillRectangle(brushHead, actorX * SQUARE_SIZE, actorY * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
                 //var brushHead = new SolidBrush(Color.DarkRed);
-                grafik.DrawImage(pictureBox2.Image, actorX * SQUARE_SIZE - 15, actorY * SQUARE_SIZE - 15, 40, 40);
+                //grafik.DrawImage(pictureBox2.Image, actorX * SQUARE_SIZE - 15, actorY * SQUARE_SIZE - 15, 40, 40);
             }
         }
 

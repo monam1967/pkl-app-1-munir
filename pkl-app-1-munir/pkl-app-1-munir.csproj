@@ -108,6 +108,16 @@
     <Compile Include="Snacke_Game.Designer.cs">
       <DependentUpon>Snacke_Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpaceInveders\Classes\ActorModel.cs" />
+    <Compile Include="SpaceInveders\Classes\BentengModel.cs" />
+    <Compile Include="SpaceInveders\Classes\EnemyModel.cs" />
+    <Compile Include="SpaceInveders\Classes\PeluruModel.cs" />
+    <Compile Include="SpaceInveders\spaceinvaderss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpaceInveders\spaceinvaderss.Designer.cs">
+      <DependentUpon>spaceinvaderss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Squential.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +170,9 @@
     <EmbeddedResource Include="Snacke_Game.resx">
       <DependentUpon>Snacke_Game.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpaceInveders\spaceinvaderss.resx">
+      <DependentUpon>spaceinvaderss.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Squential.resx">
       <DependentUpon>Squential.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,12 +188,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SpaceInveders\.vs\slnx.sqlite" />
+    <None Include="SpaceInveders\.vs\VSWorkspaceState.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\foto1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpaceInveders\asset\Bullet1.jpg" />
+    <Content Include="SpaceInveders\asset\Enemy1Red.png" />
+    <Content Include="SpaceInveders\asset\Enemy2Green.png" />
+    <Content Include="SpaceInveders\asset\Enemy3Yellow.png" />
+    <Content Include="SpaceInveders\asset\explosion.png" />
+    <Content Include="SpaceInveders\asset\Explosion48.png" />
+    <Content Include="SpaceInveders\asset\PeluruActor.png" />
+    <Content Include="SpaceInveders\asset\PlayerBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SpaceInveders\.vs\SpaceInveders\v16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

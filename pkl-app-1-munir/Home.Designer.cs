@@ -41,9 +41,10 @@ namespace pkl_app_1_munir
             this.sequentialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.percabanganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tugasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.graphicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spaceInvadersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,8 @@ namespace pkl_app_1_munir
             this.sequentialToolStripMenuItem,
             this.percabanganToolStripMenuItem,
             this.functionToolStripMenuItem,
-            this.graphicToolStripMenuItem});
+            this.graphicToolStripMenuItem,
+            this.spaceInvadersToolStripMenuItem});
             this.latihanToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latihanToolStripMenuItem.Name = "latihanToolStripMenuItem";
             this.latihanToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
@@ -135,6 +137,13 @@ namespace pkl_app_1_munir
             this.functionToolStripMenuItem.Text = "Function";
             this.functionToolStripMenuItem.Click += new System.EventHandler(this.functionToolStripMenuItem_Click);
             // 
+            // graphicToolStripMenuItem
+            // 
+            this.graphicToolStripMenuItem.Name = "graphicToolStripMenuItem";
+            this.graphicToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.graphicToolStripMenuItem.Text = "Graphic";
+            this.graphicToolStripMenuItem.Click += new System.EventHandler(this.graphicToolStripMenuItem_Click);
+            // 
             // tugasToolStripMenuItem
             // 
             this.tugasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,12 +159,12 @@ namespace pkl_app_1_munir
             this.calculatorToolStripMenuItem1.Text = "Calculator";
             this.calculatorToolStripMenuItem1.Click += new System.EventHandler(this.calculatorToolStripMenuItem1_Click);
             // 
-            // graphicToolStripMenuItem
+            // spaceInvadersToolStripMenuItem
             // 
-            this.graphicToolStripMenuItem.Name = "graphicToolStripMenuItem";
-            this.graphicToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.graphicToolStripMenuItem.Text = "Graphic";
-            this.graphicToolStripMenuItem.Click += new System.EventHandler(this.graphicToolStripMenuItem_Click);
+            this.spaceInvadersToolStripMenuItem.Name = "spaceInvadersToolStripMenuItem";
+            this.spaceInvadersToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.spaceInvadersToolStripMenuItem.Text = "Space Invaders";
+            this.spaceInvadersToolStripMenuItem.Click += new System.EventHandler(this.spaceInvadersToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -190,5 +199,6 @@ namespace pkl_app_1_munir
         private System.Windows.Forms.ToolStripMenuItem percabanganToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem graphicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spaceInvadersToolStripMenuItem;
     }
 }

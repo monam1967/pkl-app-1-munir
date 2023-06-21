@@ -71,5 +71,11 @@ namespace pkl_app_1_munir
             var graphic = new Graphic();
             graphic.Show();
         }
+
+        private void spaceInvadersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var space = new SpaceInveders.spaceinvaderss();
+            space.Show();
+        }
     }
 }
