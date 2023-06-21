@@ -40,6 +40,9 @@ namespace pkl_app_1_munir.SpaceInveders
             this.Enemy = new System.Windows.Forms.Timer(this.components);
             this.Actor = new System.Windows.Forms.Timer(this.components);
             this.PeluruActorTimer = new System.Windows.Forms.Timer(this.components);
+            this.PeluruEnemy = new System.Windows.Forms.PictureBox();
+            this.PeluruEnemyTembakTimer = new System.Windows.Forms.Timer(this.components);
+            this.PeluruEnemyTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Board)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy1Pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Enemy2Pic)).BeginInit();
@@ -47,10 +50,12 @@ namespace pkl_app_1_munir.SpaceInveders
             ((System.ComponentModel.ISupportInitialize)(this.ActorPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeluruPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExplosionPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeluruEnemy)).BeginInit();
             this.SuspendLayout();
             // 
             // Board
             // 
+            this.Board.BackColor = System.Drawing.Color.DarkGreen;
             this.Board.Location = new System.Drawing.Point(12, 12);
             this.Board.Name = "Board";
             this.Board.Size = new System.Drawing.Size(845, 423);
@@ -114,21 +119,49 @@ namespace pkl_app_1_munir.SpaceInveders
             // 
             // Enemy
             // 
+            this.Enemy.Enabled = true;
+            this.Enemy.Interval = 500;
             this.Enemy.Tick += new System.EventHandler(this.EnemyTimer_Tick);
             // 
             // Actor
             // 
+            this.Actor.Enabled = true;
+            this.Actor.Interval = 50;
             this.Actor.Tick += new System.EventHandler(this.ActorTimer_Tick);
             // 
             // PeluruActorTimer
             // 
+            this.PeluruActorTimer.Enabled = true;
+            this.PeluruActorTimer.Interval = 1;
             this.PeluruActorTimer.Tick += new System.EventHandler(this.PeluruActorTimer_Tick);
+            // 
+            // PeluruEnemy
+            // 
+            this.PeluruEnemy.Image = global::pkl_app_1_munir.Properties.Resources.Bullet1;
+            this.PeluruEnemy.Location = new System.Drawing.Point(309, 454);
+            this.PeluruEnemy.Name = "PeluruEnemy";
+            this.PeluruEnemy.Size = new System.Drawing.Size(18, 34);
+            this.PeluruEnemy.TabIndex = 7;
+            this.PeluruEnemy.TabStop = false;
+            // 
+            // PeluruEnemyTembakTimer
+            // 
+            this.PeluruEnemyTembakTimer.Enabled = true;
+            this.PeluruEnemyTembakTimer.Interval = 4000;
+            this.PeluruEnemyTembakTimer.Tick += new System.EventHandler(this.PeluruEnemyTembakTimer_Tick);
+            // 
+            // PeluruEnemyTimer
+            // 
+            this.PeluruEnemyTimer.Enabled = true;
+            this.PeluruEnemyTimer.Interval = 150;
+            this.PeluruEnemyTimer.Tick += new System.EventHandler(this.PeluruEnemyTimer_Tick);
             // 
             // spaceinvaderss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 508);
+            this.Controls.Add(this.PeluruEnemy);
             this.Controls.Add(this.Board);
             this.Controls.Add(this.ExplosionPic);
             this.Controls.Add(this.PeluruPic);
@@ -148,6 +181,7 @@ namespace pkl_app_1_munir.SpaceInveders
             ((System.ComponentModel.ISupportInitialize)(this.ActorPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeluruPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExplosionPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeluruEnemy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,5 +198,8 @@ namespace pkl_app_1_munir.SpaceInveders
         private System.Windows.Forms.Timer Enemy;
         private System.Windows.Forms.Timer Actor;
         private System.Windows.Forms.Timer PeluruActorTimer;
+        private System.Windows.Forms.PictureBox PeluruEnemy;
+        private System.Windows.Forms.Timer PeluruEnemyTembakTimer;
+        private System.Windows.Forms.Timer PeluruEnemyTimer;
     }
 }

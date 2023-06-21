@@ -33,7 +33,7 @@ namespace pkl_app_1_munir.SpaceInveders
             _listBenteng = new List<BentengModel>();
             _actor = new ActorModel();
             _peluruActor = new PeluruModel();
-            _listPeluruEnemy = new List<PeluruModel>;
+            _listPeluruEnemy = new List<PeluruModel>();
 
             BuatEnemy();
             BuatBenteng();
@@ -295,7 +295,7 @@ namespace pkl_app_1_munir.SpaceInveders
             {
                 _listPeluruEnemy.Add(new PeluruModel
                 {
-                    Gambar = EnemyBulletPic.Image,
+                    Gambar = PeluruEnemy.Image,
                     PosX = 0,
                     PosY = 0,
                     Height = 1,
