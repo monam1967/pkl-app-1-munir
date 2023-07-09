@@ -25,7 +25,8 @@ namespace pkl_app_1_munir.SpaceInveders
         private string _arahActor = "";
         private PeluruModel _peluruActor;
         private List<PeluruModel> _listPeluruEnemy;
-                
+        private int _nyawaActor = 3;
+
         public spaceinvaderss()
         {
             InitializeComponent();
@@ -136,6 +137,7 @@ namespace pkl_app_1_munir.SpaceInveders
                     modifierY = 0;
                     break;
             }
+
             foreach (var enemy in _listEnemy)
             {
                 enemy.PosX += modifierX;
@@ -251,7 +253,7 @@ namespace pkl_app_1_munir.SpaceInveders
 
         private void BuatBenteng()
         {
-            const int WIDTH = 7;
+            const int WIDTH = 6;
             const int HEIGHT = 1;
 
             for (var i = 1; i <= 8; i++)
@@ -422,6 +424,16 @@ namespace pkl_app_1_munir.SpaceInveders
                     continue;
                 if (_peluruActor.PosX > benteng.PosX + benteng.Width - 1)
                     continue;
+
+                // Mengurangi kekuatan beteng
+                benteng.DefencePower--;
+
+                if (benteng.DefencePower <= 0)
+                {
+                    // Hapus beteng jika kekuatannya habis
+                    _listBenteng.Remove(benteng);
+                }
+
                 return benteng;
             }
             return null;
@@ -434,6 +446,25 @@ namespace pkl_app_1_munir.SpaceInveders
                 if (!item.IsAktif)
                     continue;
                 item.PosY++;
+
+                // Jika peluru enemy mengenai actor
+                if (item.PosY >= _actor.PosY && item.PosY <= _actor.PosY + _actor.Height - 1 &&
+                    item.PosX >= _actor.PosX && item.PosX <= _actor.PosX + _actor.Width - 1)
+                {
+                    // Mengurangi nyawa actor
+                    _nyawaActor--;
+
+                    // Menghentikan pergerakan peluru enemy
+                    item.IsAktif = false;
+                    item.PosY = -10;
+
+                    // Menghentikan permainan jika nyawa habis
+                    if (_nyawaActor <= 0)
+                    {
+                        GameOver();
+                        return;
+                    }
+                }
 
                 if (item.PosY > SPACE_BOARD_HEIGHT)
                 {
@@ -481,6 +512,20 @@ namespace pkl_app_1_munir.SpaceInveders
             var Random = randomX.Next(1, listEnemy.Count);
             var result = listEnemy.Take(Random).Last();
             return result;
+        }
+
+        private void GameOver()
+        {
+            // Menghentikan timer dan tindakan lain yang terkait dengan permainan
+            PeluruEnemyTimer.Stop();
+            PeluruEnemyTembakTimer.Stop();
+            ActorTimer.Stop();
+            PeluruActorTimer.Stop();
+            EnemyTimer.Stop();
+
+            // Menampilkan pesan Game Over kepada pengguna (misalnya, dengan menggunakan MessageBox)
+            //MessageBox.Show("Game Over");
+            MessageBox.Show("Game Over!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

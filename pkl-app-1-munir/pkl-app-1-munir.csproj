@@ -198,6 +198,7 @@
     <None Include="Resources\foto1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\photo1687330867.jpeg" />
     <Content Include="SpaceInveders\asset\Bullet1.jpg" />
     <Content Include="SpaceInveders\asset\Enemy1Red.png" />
     <Content Include="SpaceInveders\asset\Enemy2Green.png" />

@@ -153,6 +153,16 @@ namespace pkl_app_1_munir.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo1687330867 {
+            get {
+                object obj = ResourceManager.GetObject("photo1687330867", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlayerBlue {
             get {
                 object obj = ResourceManager.GetObject("PlayerBlue", resourceCulture);
