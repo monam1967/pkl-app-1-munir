@@ -261,7 +261,7 @@ namespace pkl_app_1_munir.SpaceInveders
                 var newBenteng = new BentengModel
                 {
                     Id = i,
-                    DefencePower = 5,
+                    DefencePower = 1,
                     Height = HEIGHT,
                     Width = WIDTH,
                     PosX = (i * (WIDTH + 4)) - WIDTH,
@@ -418,6 +418,8 @@ namespace pkl_app_1_munir.SpaceInveders
         {
             foreach (var benteng in _listBenteng)
             {
+                if (benteng.DefencePower <= 0)
+                    continue;
                 if (_peluruActor.PosY > benteng.PosY + benteng.Height - 1)
                     continue;
                 if (_peluruActor.PosX < benteng.PosX)
@@ -425,14 +427,14 @@ namespace pkl_app_1_munir.SpaceInveders
                 if (_peluruActor.PosX > benteng.PosX + benteng.Width - 1)
                     continue;
 
-                // Mengurangi kekuatan beteng
+                /*// Mengurangi kekuatan beteng
                 benteng.DefencePower--;
 
                 if (benteng.DefencePower <= 0)
                 {
                     // Hapus beteng jika kekuatannya habis
                     _listBenteng.Remove(benteng);
-                }
+                }*/
 
                 return benteng;
             }
@@ -451,10 +453,8 @@ namespace pkl_app_1_munir.SpaceInveders
                 if (item.PosY >= _actor.PosY && item.PosY <= _actor.PosY + _actor.Height - 1 &&
                     item.PosX >= _actor.PosX && item.PosX <= _actor.PosX + _actor.Width - 1)
                 {
-                    // Mengurangi nyawa actor
+                    
                     _nyawaActor--;
-
-                    // Menghentikan pergerakan peluru enemy
                     item.IsAktif = false;
                     item.PosY = -10;
 
@@ -470,6 +470,28 @@ namespace pkl_app_1_munir.SpaceInveders
                 {
                     item.IsAktif = false;
                     item.PosY = -10;
+                }
+
+                /*var bentengTertembak = PeluruEnemyKenaBeteng(item);
+                if (bentengTertembak != null)
+                {
+                    bentengTertembak.DefencePower--;
+                    item.IsAktif = false;
+                    item.PosY = -10;
+                }*/
+                var bentengTertembak = PeluruEnemyKenaBeteng(item);
+                if (bentengTertembak != null)
+                {
+                    if (bentengTertembak.DefencePower <= 0)
+                    {
+                        item.IsAktif = false;
+                        item.PosY = -10;
+                    }
+                    else
+                    {
+                        // Kurangi kekuatan pertahanan benteng
+                        bentengTertembak.DefencePower--;
+                    }
                 }
             }
         }
@@ -516,16 +538,30 @@ namespace pkl_app_1_munir.SpaceInveders
 
         private void GameOver()
         {
-            // Menghentikan timer dan tindakan lain yang terkait dengan permainan
             PeluruEnemyTimer.Stop();
             PeluruEnemyTembakTimer.Stop();
             ActorTimer.Stop();
             PeluruActorTimer.Stop();
             EnemyTimer.Stop();
 
-            // Menampilkan pesan Game Over kepada pengguna (misalnya, dengan menggunakan MessageBox)
-            //MessageBox.Show("Game Over");
             MessageBox.Show("Game Over!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private BentengModel PeluruEnemyKenaBeteng(PeluruModel peluruEnemy)
+        {
+            foreach (var benteng in _listBenteng)
+            {
+                if (benteng.DefencePower <= 0)
+                    continue;
+                if (peluruEnemy.PosY < benteng.PosY)
+                    continue;
+                if (peluruEnemy.PosX < benteng.PosX)
+                    continue;
+                if (peluruEnemy.PosX > benteng.PosX + benteng.Width - 1)
+                    continue;
+                return benteng;
+            }
+            return null;
         }
     }
 }
