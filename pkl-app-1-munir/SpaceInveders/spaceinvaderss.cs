@@ -56,7 +56,11 @@ namespace pkl_app_1_munir.SpaceInveders
             DPeluru();
             DPeluruEnemy();
 
-            if (!_isGameOver)
+            if (_isGameOver)
+            {
+                DGameOver();
+            }
+            else
             {
                 DScore();
             }
@@ -153,7 +157,6 @@ namespace pkl_app_1_munir.SpaceInveders
             }
         }
 
-
         private void DBenteng()
         {
             using (var grafik = Graphics.FromImage(_canvas))
@@ -188,80 +191,58 @@ namespace pkl_app_1_munir.SpaceInveders
             }
         }
 
-        /*private void DGameOver()
-        {
-            using (var grafik = Graphics.FromImage(_canvas))
-            {
-                var margin = 10;
-
-                Font font = new Font("Arial", 34, FontStyle.Bold);
-                string text = "GAME OVER!";
-                SizeF size = grafik.MeasureString(text, font);
-                size.Width += margin * 2;
-                size.Height += margin * 2;
-
-                var posXText = (Board.Width / 2) - (size.Width / 2);
-                var posYText = 50;
-
-
-                Rectangle rect = new Rectangle((int)posXText, posYText, (int)size.Width, (int)size.Height);
-                var fillBrush = new SolidBrush(Color.AntiqueWhite);
-
-                grafik.FillRectangle(fillBrush, rect);
-                var line = new Pen(Color.DarkRed);
-                grafik.DrawRectangle(line, rect);
-
-                Brush brush = Brushes.DarkRed;
-                PointF position = new PointF(posXText + margin, posYText + margin);
-                grafik.DrawString(text, font, brush, position);
-            }
-            Board.Invalidate();
-        }*/
-
         private void DGameOver()
         {
-            using (var grafik = Graphics.FromImage(_canvas))
+            if (_isGameOver)
             {
-                var margin = 10;
+                using (var grafik = Graphics.FromImage(_canvas))
+                {
+                    var margin = 10;
 
-                Font titleFont = new Font("Arial", 34, FontStyle.Bold);
-                string titleText = "GAME OVER!";
-                SizeF titleSize = grafik.MeasureString(titleText, titleFont);
-                titleSize.Width += margin * 2;
-                titleSize.Height += margin * 2;
+                    Font gameOverFont = new Font("Arial", 34, FontStyle.Bold);
+                    string gameOverText = "GAME OVER!";
+                    SizeF gameOverSize = grafik.MeasureString(gameOverText, gameOverFont);
+                    gameOverSize.Width += margin * 2;
+                    gameOverSize.Height += margin * 2;
 
-                Font scoreFont = new Font("Arial", 15, FontStyle.Bold);
-                string scoreText = $"Score Yang Didapatkan: {_score}";
-                SizeF scoreSize = grafik.MeasureString(scoreText, scoreFont);
-                scoreSize.Width += margin;
-                scoreSize.Height += margin;
+                    Font scoreFont = new Font("Arial", 18, FontStyle.Bold);
+                    string scoreText = $"Score: {_score}";
+                    SizeF scoreSize = grafik.MeasureString(scoreText, scoreFont);
+                    scoreSize.Width += margin * 2;
+                    scoreSize.Height += margin * 2;
 
-                var posXText = (Board.Width / 2) - (titleSize.Width / 2);
-                var posYText = (Board.Height / 2) - (titleSize.Height / 2);
+                    var posXText = (Board.Width / 2) - (gameOverSize.Width / 2);
+                    var posYText = 50;
+                    var posXScore = (Board.Width / 2) - (scoreSize.Width / 2);
+                    var posYScore = posYText + gameOverSize.Height + margin;
 
-                Rectangle titleRect = new Rectangle((int)posXText, (int)posYText, (int)titleSize.Width, (int)titleSize.Height);
-                Rectangle scoreRect = new Rectangle((int)posXText, (int)posYText + (int)titleSize.Height + margin, (int)scoreSize.Width, (int)scoreSize.Height);
-                var fillBrush = new SolidBrush(Color.AntiqueWhite);
-                var line = new Pen(Color.DarkRed);
+                    Rectangle rectGameOver = new Rectangle((int)posXText, (int)posYText, (int)gameOverSize.Width, (int)gameOverSize.Height);
+                    var fillBrushGameOver = new SolidBrush(Color.AntiqueWhite);
 
-                grafik.FillRectangle(fillBrush, titleRect);
-                grafik.FillRectangle(fillBrush, scoreRect);
-                grafik.DrawRectangle(line, titleRect);
-                grafik.DrawRectangle(line, scoreRect);
+                    Rectangle rectScore = new Rectangle((int)posXScore, (int)posYScore, (int)scoreSize.Width, (int)scoreSize.Height);
+                    var fillBrushScore = new SolidBrush(Color.AntiqueWhite);
 
-                Brush titleBrush = Brushes.DarkRed;
-                Brush scoreBrush = Brushes.Black;
-                PointF titlePosition = new PointF(posXText + margin, posYText + margin);
-                PointF scorePosition = new PointF(posXText + margin, posYText + titleSize.Height + margin);
-                grafik.DrawString(titleText, titleFont, titleBrush, titlePosition);
-                grafik.DrawString(scoreText, scoreFont, scoreBrush, scorePosition);
+                    grafik.FillRectangle(fillBrushGameOver, rectGameOver);
+                    grafik.FillRectangle(fillBrushScore, rectScore);
+                    var line = new Pen(Color.DarkRed);
+                    grafik.DrawRectangle(line, rectGameOver);
+                    grafik.DrawRectangle(line, rectScore);
+
+                    Brush brush = Brushes.DarkRed;
+                    PointF positionGameOver = new PointF(posXText + margin, posYText + margin);
+                    PointF positionScore = new PointF(posXScore + margin, posYScore + margin);
+                    grafik.DrawString(gameOverText, gameOverFont, brush, positionGameOver);
+                    grafik.DrawString(scoreText, scoreFont, brush, positionScore);
+                }
             }
             Board.Invalidate();
         }
 
-
         private void DScore()
         {
+            if (_isGameOver)
+                return;
+
             using (var grafik = Graphics.FromImage(_canvas))
             {
                 var margin = 5;
@@ -272,8 +253,8 @@ namespace pkl_app_1_munir.SpaceInveders
                 size.Width += margin * 2;
                 size.Height += margin * 2;
 
-                var posXText = Board.Width - size.Width - margin;
-                var posYText = margin;
+                var posXText = 10;
+                var posYText = 10;
 
                 Rectangle rect = new Rectangle((int)posXText, (int)posYText, (int)size.Width, (int)size.Height);
                 var fillBrush = new SolidBrush(Color.Black);
@@ -288,7 +269,6 @@ namespace pkl_app_1_munir.SpaceInveders
             }
             Board.Invalidate();
         }
-
 
         private void BuatEnemy()
         {
@@ -569,7 +549,14 @@ namespace pkl_app_1_munir.SpaceInveders
                     item.IsAktif = false;
                     item.PosY = -10;
 
-                    // Menghentikan permainan jika nyawa habis
+                    /*// Menghentikan permainan jika nyawa habis
+                    if (_nyawaActor <= 0 && !_isGameOver)
+                    {
+                        _isGameOver = true;
+                        DGameOver();
+                        GameOver();
+                        return;
+                    }*/
                     if (_nyawaActor <= 0)
                     {
                         DGameOver();
@@ -656,8 +643,8 @@ namespace pkl_app_1_munir.SpaceInveders
             PeluruActorTimer.Stop();
             EnemyTimer.Stop();
 
-            _isGameOver = false;
-            DGameOver();
+            _isGameOver = true;
+            DrawAll();
         }
 
         private BentengModel PeluruEnemyKenaBeteng(PeluruModel peluruEnemy)
@@ -676,8 +663,5 @@ namespace pkl_app_1_munir.SpaceInveders
             }
             return null;
         }
-
-       
-
     }
 }
