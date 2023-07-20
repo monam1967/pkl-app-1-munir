@@ -198,7 +198,13 @@
     <None Include="Resources\foto1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Tembak.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Resources\photo1687330867.jpeg" />
+    <EmbeddedResource Include="GameOver.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="SpaceInveders\asset\Bullet1.jpg" />
     <Content Include="SpaceInveders\asset\Enemy1Red.png" />
     <Content Include="SpaceInveders\asset\Enemy2Green.png" />

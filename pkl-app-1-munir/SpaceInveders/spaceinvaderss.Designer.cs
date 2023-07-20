@@ -97,7 +97,7 @@ namespace pkl_app_1_munir.SpaceInveders
             this.Board.BackColor = System.Drawing.Color.DarkGreen;
             this.Board.Location = new System.Drawing.Point(12, 12);
             this.Board.Name = "Board";
-            this.Board.Size = new System.Drawing.Size(845, 423);
+            this.Board.Size = new System.Drawing.Size(804, 423);
             this.Board.TabIndex = 0;
             this.Board.TabStop = false;
             this.Board.Paint += new System.Windows.Forms.PaintEventHandler(this.Board_Paint);
@@ -160,7 +160,7 @@ namespace pkl_app_1_munir.SpaceInveders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 508);
+            this.ClientSize = new System.Drawing.Size(827, 508);
             this.Controls.Add(this.PeluruEnemy);
             this.Controls.Add(this.Board);
             this.Controls.Add(this.ExplosionPic);

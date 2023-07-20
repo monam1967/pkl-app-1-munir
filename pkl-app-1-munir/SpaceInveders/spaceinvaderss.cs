@@ -8,15 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.IO;
+using System.Reflection;
+
+
 
 namespace pkl_app_1_munir.SpaceInveders
 {
     public partial class spaceinvaderss : Form
     {
         private Bitmap _canvas = null;
-        const int SPACE_BOARD_WIDTH = 80;
+        const int SPACE_BOARD_WIDTH = 73;
         const int SPACE_BOARD_HEIGHT = 40;
-        const int SQUARE_SIZE = 10;
+        const int SQUARE_SIZE = 11;
         const int JUMLAH_PELURU_ENEMY = 3;
         private List<EnemyModel> _listEnemy;
         private List<BentengModel> _listBenteng;
@@ -28,6 +33,11 @@ namespace pkl_app_1_munir.SpaceInveders
         private int _nyawaActor = 1;
         private int _score = 0;
         private bool _isGameOver = false;
+        
+        const string soundGameOver = "pkl_app_1_munir.GameOver.wav";
+        const string soundActorTembak = "pkl_app_1_munir.Tembak.wav";
+        const string soundEnemyTembak = "pkl_app_1_munir.Tembak.wav";
+        const string soundEnemyMati = "pkl_app_1_munir.Tembak.wav";
 
         public spaceinvaderss()
         {
@@ -205,7 +215,7 @@ namespace pkl_app_1_munir.SpaceInveders
                     gameOverSize.Width += margin * 2;
                     gameOverSize.Height += margin * 2;
 
-                    Font scoreFont = new Font("Arial", 18, FontStyle.Bold);
+                    Font scoreFont = new Font("Arial", 16, FontStyle.Bold);
                     string scoreText = $"Score: {_score}";
                     SizeF scoreSize = grafik.MeasureString(scoreText, scoreFont);
                     scoreSize.Width += margin * 2;
@@ -220,19 +230,20 @@ namespace pkl_app_1_munir.SpaceInveders
                     var fillBrushGameOver = new SolidBrush(Color.AntiqueWhite);
 
                     Rectangle rectScore = new Rectangle((int)posXScore, (int)posYScore, (int)scoreSize.Width, (int)scoreSize.Height);
-                    var fillBrushScore = new SolidBrush(Color.AntiqueWhite);
+                    var fillBrushScore = new SolidBrush(Color.Black);
 
                     grafik.FillRectangle(fillBrushGameOver, rectGameOver);
                     grafik.FillRectangle(fillBrushScore, rectScore);
-                    var line = new Pen(Color.DarkRed);
+                    var line = new Pen(Color.White);
                     grafik.DrawRectangle(line, rectGameOver);
                     grafik.DrawRectangle(line, rectScore);
 
-                    Brush brush = Brushes.DarkRed;
+                    Brush brush = Brushes.Red;
+                    Brush scoretext = Brushes.White;
                     PointF positionGameOver = new PointF(posXText + margin, posYText + margin);
                     PointF positionScore = new PointF(posXScore + margin, posYScore + margin);
                     grafik.DrawString(gameOverText, gameOverFont, brush, positionGameOver);
-                    grafik.DrawString(scoreText, scoreFont, brush, positionScore);
+                    grafik.DrawString(scoreText, scoreFont, scoretext, positionScore);
                 }
             }
             Board.Invalidate();
@@ -276,7 +287,7 @@ namespace pkl_app_1_munir.SpaceInveders
             const int HEIGHT = 3;
 
             //  paling atas
-            for (var i = 1; i <= 9; i++)
+            for (var i = 1; i <= 8; i++)
             {
                 var newEnemy = new EnemyModel
                 {
@@ -292,7 +303,7 @@ namespace pkl_app_1_munir.SpaceInveders
             }
 
             //  tengah
-            for (var i = 10; i <= 18; i++)
+            for (var i = 9; i <= 16; i++)
             {
                 var newEnemy = new EnemyModel
                 {
@@ -301,14 +312,14 @@ namespace pkl_app_1_munir.SpaceInveders
                     IsAlive = 0,
                     Width = WIDTH,
                     Height = HEIGHT,
-                    PosX = ((i - 9) * WIDTH * 2) - WIDTH,
+                    PosX = ((i - 8) * WIDTH * 2) - WIDTH,
                     PosY = 7
                 };
                 _listEnemy.Add(newEnemy);
             }
 
             // baris ke-2
-            for (var i = 19; i <= 27; i++)
+            for (var i = 17; i <= 24; i++)
             {
                 var newEnemy = new EnemyModel
                 {
@@ -317,14 +328,14 @@ namespace pkl_app_1_munir.SpaceInveders
                     IsAlive = 0,
                     Width = WIDTH,
                     Height = HEIGHT,
-                    PosX = ((i - 18) * WIDTH * 2) - WIDTH,
+                    PosX = ((i - 16) * WIDTH * 2) - WIDTH,
                     PosY = 12
                 };
                 _listEnemy.Add(newEnemy);
             }
 
             // baris ke-1
-            for (var i = 28; i <= 36; i++)
+            for (var i = 25; i <= 32; i++)
             {
                 var newEnemy = new EnemyModel
                 {
@@ -333,7 +344,7 @@ namespace pkl_app_1_munir.SpaceInveders
                     IsAlive = 0,
                     Width = WIDTH,
                     Height = HEIGHT,
-                    PosX = ((i - 27) * WIDTH * 2) - WIDTH,
+                    PosX = ((i - 24) * WIDTH * 2) - WIDTH,
                     PosY = 17
                 };
                 _listEnemy.Add(newEnemy);
@@ -455,6 +466,8 @@ namespace pkl_app_1_munir.SpaceInveders
             _peluruActor.PosX = _actor.PosX + (_actor.Width / 2);
             _peluruActor.PosY = _actor.PosY;
             _peluruActor.IsAktif = true;
+
+            PlaySound(soundActorTembak);
         }
 
         private void PeluruActorTimer_Tick(object sender, EventArgs e)
@@ -478,6 +491,7 @@ namespace pkl_app_1_munir.SpaceInveders
                 enemyTertembak.IsAlive = 1;
                 _peluruActor.IsAktif = false;
                 _peluruActor.PosY = -10;
+                PlaySound(soundEnemyMati);
 
                 _score += 10;
             }
@@ -605,6 +619,7 @@ namespace pkl_app_1_munir.SpaceInveders
             peluru.IsAktif = true;
             peluru.PosX = Nembak.PosX;
             peluru.PosY = Nembak.PosY;
+            PlaySound(soundEnemyTembak);
         }
 
         private List<EnemyModel> ListEnemyBawah()
@@ -643,6 +658,7 @@ namespace pkl_app_1_munir.SpaceInveders
             PeluruActorTimer.Stop();
             EnemyTimer.Stop();
 
+            PlaySound(soundGameOver);
             _isGameOver = true;
             DrawAll();
         }
@@ -662,6 +678,13 @@ namespace pkl_app_1_munir.SpaceInveders
                 return benteng;
             }
             return null;
+        }
+
+        private void PlaySound(string soundName)
+        {
+            Stream soundStream = typeof(Program).Assembly.GetManifestResourceStream(soundName);
+            SoundPlayer soundPlayer = new SoundPlayer(soundStream);
+            soundPlayer.Play();
         }
     }
 }
